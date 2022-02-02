@@ -5,8 +5,19 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-// any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+// any CSS you import will output into a single css file (app.scss in this case)
+import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+import setFooter from './setFooter';
+
+require('bootstrap');
+require('@fortawesome/fontawesome-free/js/all');
+require('@fortawesome/fontawesome-free/css/all.min.css');
+
+function onWindowsSizeChange() {
+    setFooter('footer', 'mainDiv');
+}
+window.onresize = onWindowsSizeChange;
+onWindowsSizeChange();

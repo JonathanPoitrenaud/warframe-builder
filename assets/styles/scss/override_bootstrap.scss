@@ -10,5 +10,3 @@ $custom-colors: (
         "dark": #231F20,
         "yellow": #D2C827,
 );
-
-$theme-colors: map-merge($theme-colors, $custom-colors);

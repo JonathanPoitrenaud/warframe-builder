@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Weapon{% endblock %}
+
+{% block body %}
+    <div class="container ">
+        <div class="d-flex justify-content-center mb-3">
+            <h1 class="col-10 col-sm-6 bg-dark text-primary text-center p-2 m-3 rounded-pill fw-bold fs-3">Weapon</h1>
+        </div>
+        <div class="mt-3 d-flex align-items-center">
+        {% for show_weapon in weapons %}
+            <img class="text-center d-flex ms-5 me-2" src="{{ show_weapon.imgLink }}" alt="{{ show_weapon.name }}">
+            <div>
+                <table class="border border-dark">
+                    <tr>
+                        <td class="text-start">Name</td>
+                        <td class="text-end">{{ show_weapon.name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Attack</td>
+                        <td class="text-end">{{ show_weapon.attack }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Attack Speed</td>
+                        <td class="text-end">{{ show_weapon.attackSpeed }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Range</td>
+                        <td class="text-end">{{ show_weapon.attackRange }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Critical chance</td>
+                        <td class="text-end">{{ show_weapon.CriticalChance }}</td>
+                    </tr>
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

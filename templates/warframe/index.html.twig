@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Warframe{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="d-flex justify-content-center mb-3">
+            <h1 class="col-10 col-sm-6 bg-dark text-primary text-center p-2 m-3 rounded-pill fw-bold fs-3">Warframe</h1>
+        </div>
+        {% for show_warframe in warframes %}
+            <div class="mt-5 mb-3">
+                <img src="{{ show_warframe.imgLink }}" alt="{{ show_warframe.name }}">
+            </div>
+            <div class="mb-5">
+                <table class="border border-dark py-2">
+                    <tr>
+                        <td class="text-start">Name</td>
+                        <td class="text-end">{{ show_warframe.name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Life</td>
+                        <td class="text-end">{{ show_warframe.life }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Shield</td>
+                        <td class="text-end">{{ show_warframe.shield }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Energy</td>
+                        <td class="text-end">{{ show_warframe.energy }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Speed</td>
+                        <td class="text-end">{{ show_warframe.speed }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Description</td>
+                        <td class="text-end ps-2">{{ show_warframe.description }}</td>
+                    </tr>
+                </table>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
